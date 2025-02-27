@@ -1,11 +1,6 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# My slides for Multi-Agent System
 
-To start the slide show:
+Visit for more details: [redreamality.com/talks/multi-agent-system](https://redreamality.com/talks/multi-agent-system)
 
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
+Made with [Slidev](https://github.com/slidevjs/slidev)!
 
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).

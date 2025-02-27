@@ -17,6 +17,8 @@ drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
+preload: true
+routeAlias: cover
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 ---
@@ -32,11 +34,12 @@ mdc: true
 </div>
 
 ---
+title: Multi-Agent System - Theory and Practice
 layout: default 
+routeAlias: questions
 ---
 
 # 我们今天试图回答哪些问题？
-
 
 整体内容分为理论和实践两部分
 
@@ -75,6 +78,7 @@ layout: default
 
 ---
 layout: section
+routeAlias: part1
 ---
 
 # PART 1: 【道】
@@ -83,6 +87,7 @@ layout: section
 ---
 layout: default
 transition: slide-up
+routeAlias: what-is-agent
 ---
 
 # 1.1 首先，什么是智能体？
@@ -120,6 +125,7 @@ Agent这个词的滥用，导致大部分概念是混淆的！
 ---
 layout: fact
 transition: slide-up
+routeAlias: before-structure
 ---
 
 ## 在开始定义Agent之前，我们先来了解一个基本结构。
@@ -128,6 +134,7 @@ transition: slide-up
 ---
 layout: default
 transition: slide-up
+routeAlias: augmented-llm
 ---
 
 # 基础构建块：增强型 LLM（Augmented LLM）
@@ -172,6 +179,7 @@ transition: slide-up
 ---
 layout: section
 transition: slide-left
+routeAlias: workflow-agent
 ---
 
 <div class="text-red-300 text-6xl font-bold text-center">
@@ -190,6 +198,7 @@ LLM + Tool + Data Pipeline = Agentic Workflow
 ---
 layout: default
 transition: slide-up
+routeAlias: agent-definition
 ---
 
 # LLM时代，Agent的主流定义
@@ -248,6 +257,7 @@ layout: default
 ---
 layout: section
 transition: slide-left
+routeAlias: workflow-vs-agent
 ---
 
 <div class="text-red-300 text-6xl font-bold text-center">
@@ -257,6 +267,7 @@ transition: slide-left
 ---
 layout: default
 transition: fade
+routeAlias: agent-landscape
 ---
 
 # 1.2 如何识别智能体适合的场景？
@@ -306,6 +317,7 @@ transition: fade
 ---
 layout: default
 transition: slide-left
+routeAlias: why-agent
 ---
 
 # 1.3 为什么需要（多）智能体，他解决的是什么问题？
@@ -339,6 +351,7 @@ transition: slide-left
 
 ---
 layout: default
+routeAlias: multi-agent-basics
 ---
 
 # 1.4. 多智能体的基本思想是什么？与单智能体的区别？
@@ -422,6 +435,56 @@ transition: fade
 
 ---
 layout: default
+routeAlias: key-factors
+---
+
+# 1.5. 多智能体系统的构建需要考虑哪些关键因素？
+
+<div class="grid grid-cols-2 gap-4 mt-8">
+
+<div>
+
+### 关键因素
+
+- 🎯 任务优先：让架构适应任务，而不是反过来
+- ✨ 简单优先：优先选择最简单的解决方案
+- 💰 成本效益：权衡系统延迟和成本与性能需求
+- 🔄 容许出错：构建完备的回退机制，容许智能体出错。
+- 👀 监控干预：监控智能体运行状态，必要时干预。
+
+</div>
+
+<div>
+
+### 场景匹配
+
+- 工作流：适合流程固定、要求稳定的任务
+- 智能体：适合需要灵活决策的复杂场景
+
+</div>
+
+</div>
+
+---
+layout: default
+transition: fade
+routeAlias: human-model-interaction
+---
+
+# 1.6. 系统的作用？- 人与模型交互
+
+<div class="flex justify-center items-center">
+  <img src="./images/Feishu_2025-02-24_12-34-13.png" alt="人机交互的界面" class="w-140">
+</div>
+
+构建LLM系统的意义在于：
+- 为模型固化成熟的设计模式、<span v-mark.circle.red>数据管线</span>，从而将高质量人类知识压缩给模型。
+- 引导人类提出有效的问题，从而获得高质量的人类反馈。
+
+
+---
+layout: default
+routeAlias: human-agent-interaction
 ---
 
 # 1.6. 系统的作用？- 人与多智能体交互
@@ -437,6 +500,7 @@ layout: default
 
 ---
 layout: default
+routeAlias: limitations
 ---
 
 # 1.7. 当前智能体系统的局限与挑战
@@ -472,6 +536,7 @@ LLM的局限：多模态理解能力不足。
 
 ---
 layout: section
+routeAlias: part2
 ---
 
 # PART II: 【术】
@@ -481,6 +546,7 @@ layout: section
 ---
 layout: section
 transition: slide-up
+routeAlias: workflow-patterns
 ---
 
 # 2.1 搭建智能体工作流的5种方式
@@ -490,6 +556,7 @@ transition: slide-up
 ---
 layout: fact
 transition: slide-up
+routeAlias: pattern-intro
 ---
 
 ## 设计模式是对于共性场景任务的抽象
@@ -498,6 +565,7 @@ transition: slide-up
 ---
 layout: default
 transition: None
+routeAlias: workflow-serial-processing
 ---
 
 # 工作流模式：串行处理
@@ -531,6 +599,7 @@ transition: None
 ---
 layout: default
 transition: slide-up
+routeAlias: workflow-serial-processing-2
 ---
 
 # 工作流模式：串行处理（续）
@@ -587,6 +656,7 @@ transition: slide-up
 ---
 layout: default
 transition: slide-up
+routeAlias: workflow-routing
 ---
 
 # 工作流模式：路由分发
@@ -609,7 +679,7 @@ transition: slide-up
     - 路由器不一定需要LLM：根据FAQ库中是否能够匹配到问题，来决定是否路由到LLM环节。
     - 路由分类数量的选择：如果分类太多，路由器需要推理的时间太长。
     - 效率提升：如果需要用LLM路由的场景，尽量输出短文本，减少LLM的推理时间。
-      - 比如1,2,3,4，而不是“一般场景”，“交易场景”， “软件使用支持场景”，“转人工”。
+      - 比如1,2,3,4，而不是"一般场景"，"交易场景"， "软件使用支持场景"，"转人工"。
     - 意图不一定要非常细，如果太细，前序分错了后面模型处理不了。
   - 许多可能的改进：下游拒识反馈给上游重新分类 or 下游并行执行后决策反馈。
 - <span text-blue-300 text-base>信息抽取</span>：
@@ -640,6 +710,7 @@ transition: slide-up
 ---
 layout: default
 transition: slide-up
+routeAlias: workflow-parallel-processing
 ---
 
 # 工作流模式：并行处理
@@ -696,6 +767,7 @@ transition: slide-up
 ---
 layout: fact
 transition: slide-up
+routeAlias: workflow-plus-feedback-is-multi-agent-system
 ---
 
 <div class="mt-8 text-5xl font-bold from-red-400 to-indigo-500 bg-gradient-to-r bg-clip-text text-transparent">
@@ -712,6 +784,7 @@ transition: slide-up
 ---
 layout: default
 transition: slide-up
+routeAlias: agent-orchestrator-executor
 ---
 
 # 智能体模式：编排者-执行者
@@ -755,6 +828,7 @@ transition: slide-up
 
 ---
 layout: default
+routeAlias: agent-evaluator-optimizer
 ---
 
 # 智能体模式：评估者-优化者
@@ -803,6 +877,7 @@ layout: default
 ---
 layout: default
 transition: slide-up
+routeAlias: platform-architecture
 ---
 
 # 2.2 感易智能体平台架构实现
@@ -812,6 +887,7 @@ transition: slide-up
 
 ---
 layout: default
+routeAlias: mcp-tool-examples
 ---
 
 # 2.3 工具举例案例
@@ -846,7 +922,7 @@ Web 内容访问和自动化功能。支持以 AI 友好格式搜索、抓取和
 - [@modelcontextprotocol/server-puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) 📇 🏠 - 用于网页抓取和交互的浏览器自动化
 - [@kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) 📇 ☁️ - 获取 YouTube 字幕和文字记录以供 AI 分析
 - [@recursechat/mcp-server-apple-shortcuts](https://github.com/recursechat/mcp-server-apple-shortcuts) 📇 🏠 🍎 - MCP 服务器与 Apple Shortcuts 的集成
-- [kimtth/mcp-aoai-web-browsing](https://github.com/kimtth/mcp-aoai-web-browsing) 🐍 🏠 - 使用 Azure OpenAI 和 Playwright 的“最小”服务器/客户端 MCP 实现。
+- [kimtth/mcp-aoai-web-browsing](https://github.com/kimtth/mcp-aoai-web-browsing) 🐍 🏠 - 使用 Azure OpenAI 和 Playwright 的"最小"服务器/客户端 MCP 实现。
 - [@pskill9/web-search](https://github.com/pskill9/web-search) 📇 🏠 - 一个支持使用 Google 搜索结果进行免费网页搜索的 MCP 服务器，无需 API 密钥
 
 ### 🎨 <a name="art-and-culture"></a>艺术与文化
@@ -870,7 +946,7 @@ Web 内容访问和自动化功能。支持以 AI 友好格式搜索、抓取和
 运行命令、捕获输出以及以其他方式与 shell 和命令行工具交互。
 
 - [ferrislucas/iterm-mcp](https://github.com/ferrislucas/iterm-mcp) 🖥️ 🛠️ 💬 - 一个为 iTerm 终端提供访问能力的 MCP 服务器。您可以执行命令，并就终端中看到的内容进行提问交互。
-- [g0t4/mcp-server-commands](https://github.com/g0t4/mcp-server-commands) 📇 🏠 - 使用“run_command”和“run_script”工具运行任何命令。
+- [g0t4/mcp-server-commands](https://github.com/g0t4/mcp-server-commands) 📇 🏠 - 使用"run_command"和"run_script"工具运行任何命令。
 - [MladenSU/cli-mcp-server](https://github.com/MladenSU/cli-mcp-server) 🐍 🏠 - 具有安全执行和可定制安全策略的命令行界面
 - [tumf/mcp-shell-server](https://github.com/tumf/mcp-shell-server) 实现模型上下文协议 (MCP) 的安全 shell 命令执行服务器
 
@@ -1136,6 +1212,7 @@ Web 内容访问和自动化功能。支持以 AI 友好格式搜索、抓取和
 ---
 layout: default
 transition: slide-up
+routeAlias: human-interaction-interface
 ---
 
 # 2.4 人机交互的界面
@@ -1205,6 +1282,7 @@ CubeFlow: 低代码拖拽式多智能体编排，面向一般通用场景。
 ---
 layout: default
 transition: slide-up
+routeAlias: human-interaction-interface-cursor
 ---
 
 # 人机交互的界面 - 设计参考 - Cursor
@@ -1218,6 +1296,7 @@ Cursor: 编程IDE。Agent可跨文件生成代码，面向开发者。
 ---
 layout: default
 transition: slide-up
+routeAlias: human-interaction-interface-oomol
 ---
 
 # 人机交互的界面 - 设计参考 - Oomol
@@ -1231,6 +1310,7 @@ Oomol: 代码优先的任务平台，支持自定义模块，面向开发者。
 ---
 layout: default
 transition: slide-up
+routeAlias: human-interaction-interface-langgraph-studio
 ---
 
 # 人机交互的界面 - 设计参考 - LangGraph Studio
@@ -1244,6 +1324,7 @@ LangGraph Studio: 代码优先的支持多智能体编排，面向开发者/有�
 ---
 class: text-[10px] text-left
 mdc: true
+routeAlias: multi-agent-system-evaluation
 ---
 
 # 2.5 如何评测多智能体系统？
@@ -1260,6 +1341,9 @@ mdc: true
 
 
 
+---
+layout: default
+routeAlias: design-principles-and-best-practices
 ---
 
 # 设计原则与最佳实践
@@ -1310,6 +1394,7 @@ mdc: true
 ---
 layout: default
 transition: fade
+routeAlias: system-purpose-human-model-interaction
 ---
 
 # 再次回顾： 系统的作用？- 人与模型交互
@@ -1329,3 +1414,4 @@ layout: section
 ---
 
 # 感谢聆听
+
