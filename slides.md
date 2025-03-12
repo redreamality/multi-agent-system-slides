@@ -417,21 +417,6 @@ layout: default
 
 </div>
 
----
-layout: default
-transition: fade
----
-
-# 1.6. 系统的作用？- 人与模型交互
-
-<div class="flex justify-center items-center">
-  <img src="./images/Feishu_2025-02-24_12-34-13.png" alt="人机交互的界面" class="w-140">
-</div>
-
-构建LLM系统的意义在于：
-- 为模型<span v-mark.underline.yellow>固化</span>成熟的设计模式、数据管线，从而将高质量人类知识压缩给模型。
-- <span v-mark.underline.blue>引导</span>人类提出有效的问题，从而获得高质量的人类反馈。
-
 
 ---
 layout: default
